@@ -7,7 +7,7 @@ params:
     icon: fas fa-user
     title: About Me
   author: David Henderson, PhD
-  copyright: short copyright message
+  copyright: 
   description: Dr David Henderson
   education:
     icon: fas fa-graduation-cap
@@ -86,7 +86,7 @@ params:
   profile:
     location: Highlands, Scotland
     name: David Henderson, PhD
-    photo: me2.jpg
+    photo: me2.jpeg
     tagline: Research Fellow
   project:
     icon: fas fa-project-diagram
