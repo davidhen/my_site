@@ -144,14 +144,46 @@ params:
         url: '#'
       - authors: Comas-Herrera A, Zalakaín J, Lemmon E, Henderson D, Litwin C, Hsu AT, Schmidt AE, Arling G, Kruse F, Fernández JL.
         date: 2021
-        journal: International Long Term Policy Network
+        journal: International Long Term Care Policy Network
+        title: Mortality associated with COVID-19 in care homes- international evidence. 
         type: Other academic publications
         url: 'https://ltccovid.org/2020/04/12/mortality-associated-with-covid-19-outbreaks-in-care-homes-early-international-evidence/'
+      - authors: Bell D, Comas-Herrera A, Henderson D, Jones S, Lemmon E, Moro M, Murphy S, o'Reilly D, Patrignani P.
+        date: 2020
+        journal: International Long Term Care Policy Network
+        title: COVID-19 mortality and long-term care- A UK comparison.
+        type: Other academic publications
+        url: 'https://ltccovid.org/2020/08/28/covid-19-mortality-and-long-term-care-a-uk-comparison/'
+      - authors: Bell D, Henderson D, Lemmon E, Moro M.
+        date: 2020
+        journal: International Long Term Care Policy Network
+        title: Deaths in Scottish care homes and COVID-19
+        type: Other academic publications
+        url: 'https://ltccovid.org/wp-content/uploads/2020/12/Deaths-in-Scottish-care-homes-up-to-3rd-June-corrected-1.pdf'
     title: Publications
     types:
       - First/last and/or corresponding author
       - Other academic publications
       - Conference Proceedings
+  grants:
+    format:
+      - date
+      - authors
+      - title
+      - funder
+    icon: fas fa-book
+    list:
+      - authors: Tweed E, Craig P, Mayor C, Henderson D, Brown D, Alik M, Pell J, Watson N, Meier P
+        date: 2021
+        title: Unlocking data to inform public health policy and practice- decision-maker perspectives on the use of cross-sectoral data as part of a whole-systems approach
+        funder: National Institute for Health Research ref- NIHR133585
+        type: Co-investigator
+        url: 'https://dev.fundingawards.nihr.ac.uk/award/NIHR133585'
+    title: Grants and Supervision
+    types:
+      - Co-investigator
+      - PhD funding
+      - Supervision
   showInAccordion:
     - expand: yes
       item: aboutme
@@ -159,7 +191,7 @@ params:
     - item: education
     - item: publication
     - item: project
-    - item: skill
+    - item: grants
     - item: hobby
   skill:
     icon: fas fa-cogs
