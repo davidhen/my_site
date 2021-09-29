@@ -25,6 +25,7 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 ```{r}
 library(tidyverse)
+library(lubridate)
 library(ggthemes)
 library(countrycode)
 library(OECD)
@@ -91,7 +92,7 @@ ltc %>%
 ltc_plot
 ```
 
-```{r}
+```{r, eval=FALSE}
 ggsave("ltc_plot.png", ltc_plot, height =9, width = 12)
 ```
 
