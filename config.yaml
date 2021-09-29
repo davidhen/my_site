@@ -3,7 +3,7 @@ languageCode: en-us
 theme: aafu
 params:
   aboutme:
-    description: I am a research fellow based at the Usher Institute and the University of Edinburgh. I use R to wrangle and analyse large administrative datasets to help inform policy and practice in health and social care. My background is in clinical nursing having worked in Acute Medical Admissions and Medical High Dependency at Raigmore Hospital in Inverness. I also worked part-time at NHS24 as a Nurse Practitioner during my PhD studies.
+    description: I am a Research Fellow based with the primary care and multimorbidity research group at the Usher Institute, University of Edinburgh. I am responsible for delivering the quantitative elements of an Economic \& Social Research Council-funded grant evaluating transformation of primary care. I have particular skills utilising R to clean and analyse large administrative datasets for epidemiology and health \& care services research. I am also a registered Nurse and until recently worked part-time for NHS 24 as a Nurse Practitioner. Previous nursing experience included Medical High Dependency and Acute Medical Admissions at Raigmore Hospital in Inverness.
     icon: fas fa-user
     title: About Me
   author: David Henderson, PhD
@@ -41,8 +41,31 @@ params:
         url: 'https://www.scadr.ac.uk/'
       - company: Urban Big Data Centre, University of Glasgow
         dates: Nov 2018 - Feb 2019
-        position: Research Assistant
+        position: Research Associate
         url: 'https://www.ubdc.ac.uk/'
+      - company: NHS24
+        dates: Jun 2015 - Oct 2018
+        position: Nurse Practitioner
+      - company: NHS Highland
+        dates: June 2011 - June 2015
+        position: Staff Nurse
+        details: Acute Medical Admissions & Medical High Dependency Unit 
+      - company: NHS Highland
+        dates: Apr 2010 - June 2011
+        position: Staff Nurse
+        details: Cardiology step-down & General Medical ward
+      - company: NHS Highland
+        dates: Jan 2008 - April 2010
+        position: Healthcare Assistant
+        details: Nurse Bank
+      - company: Self-employed
+        dates: Jul 2003 - Sept 2006
+        position: Assistant Director & Locations Scout
+        details: Worked for many media companies including BBC and STV on a variety of broadcast programming including drama and live productions
+      - company: HM Forces
+        dates: Nov 1995 - Oct 2002
+        position: Lance Corporal
+        details: Infantry soldier in 1st Battalion the Highlanders (Seaforth, Gordons & Camerons). Main duties as a drummer in the regiment's Pipe's and Drums and as a platoon signaller in the machine gun (GPMG/SF) platoon
     title: Experience
   favicons:
     metas: "        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"apple-touch-icon.png\">\n
@@ -55,30 +78,25 @@ params:
   hobby:
     icon: fas fa-gamepad
     list:
-      - hobby: Cooking
-      - hobby: Hiking
-      - hobby: Baking
+      - hobby: Pipe Band Drumming
+      - hobby: Golf
+      - hobby: Walking
+      - hobby: Reading
     title: Hobbies
   profile:
-    location: City Name, ST
-    name: First Last, Abbr.
-    photo: profile.jpg
-    tagline: Title
+    location: Highlands, Scotland
+    name: David Henderson, PhD
+    photo: me2.jpg
+    tagline: Research Fellow
   project:
     icon: fas fa-project-diagram
     list:
-      - description: Description of the project
-        title: Project 1
-        url: '#'
-      - description: Description of the project
-        title: Project 2
-        url: '#'
-      - description: Description of the project
-        title: Project 3
-        url: '#'
-      - description: Description of the project
-        title: Project 4
-        url: '#'
+      - description: Website associated with the above paper showing code for measures and plots used in the report
+        title: COVID-19 mortality and long-term care- a UK comparison
+        url: 'https://davidhen.github.io/ltc_covid_uk/index.html'
+      - description: Link to GitHub repo showing the RMarkdown files I used to write my thesis.
+        title: PhD Thesis
+        url: 'https://github.com/davidhen/thesis_rmd'
     title: Projects
   publication:
     format:
@@ -88,31 +106,40 @@ params:
       - journal
     icon: fas fa-book
     list:
-      - authors: F Last, F Second, P secondary
-        date: '2018'
-        journal: Journal of Field 52 (16), 9033-9044
-        title: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        type: Journal Articles
+      - authors: MacRae C, Henderson D (joint first-author), Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
+        date: 'In Print'
+        journal: British Journal of General Practice Open
+        title: Excessive polypharmacy and potentially inappropriate prescribing in 147 care homes- cross sectional study
+        type: First/last and/or corresponding author
         url: '#'
-      - authors: F Last, F Second, P secondary
-        date: '2018'
-        journal: Journal of Field 52 (16), 9033-9044
-        title: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        type: Journal Articles
-        url: '#'
-      - authors: F Last, F Second, P secondary
-        date: '2018'
-        journal: Journal of Field 52 (16), 9033-9044
-        title: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        type: Proceedings
+      - authors: Henderson D, Atherton I, McCowan C, Mercer SW, Bailey N.
+        date: '2021'
+        journal: Age & Ageing 50(1)
+        title: Linkage of national health & social care data- a cross-sectional study of multimorbidity and social care use in people aged over 65 years in Scotland
+        type: First/last and/or corresponding author
+        url: 'https://doi.org/10.1093/ageing/afaa134'
+      - authors: MacRae C, Mercer SW, Guthrie, B, Henderson D.
+        date: '2021'
+        journal: British Journla of General Practice 71(704)
+        title: Comorbidity in chronic kidney disease- a large cross-sectional study of prevalence in Scottish primary care
+        type: First/last and/or corresponding author
+        url: 'https://doi.org/10.3399/bjgp20X714125'
+      - authors: Henderson D, Burton J, Lynch E, Clark D, Rintoul J, Bailey N.
+        date: 2019
+        title: Data Resource Profile- The Scottish Social Care Survey (SCS) and the Scottish Care Home Census (SCHC)
+        journal: International Journal of Population Data Science 4(1)
+        url: 'https://doi.org/10.23889/ijpds.v4i1.1108'
+      - authors: Mercer, SW, Henderson D, Huang H, Stewart E, Guthrie B, Wang H.
+        date: '2021'
+        journal: British Journal of General Practice
+        title: Integration of health and social care - necessary but challenging for all
+        type: Other academic publications
         url: '#'
     title: Publications
     types:
-      - Journal Articles
-      - Proceedings
+      - First/last and/or corresponding author
+      - Other academic publications
+      - Conference Proceedings
   showInAccordion:
     - expand: yes
       item: aboutme
