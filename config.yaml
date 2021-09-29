@@ -12,16 +12,14 @@ params:
   education:
     icon: fas fa-graduation-cap
     list:
-      - college: University of State-City
-        dates: 2013 - 2018
-        degree: Ph.D. in Subject
-        thesis_title: 'Effect of humans on other humans: a study of human behavior.'
-        thesis_url: '#'
-      - college: University of State-City
-        dates: 2013 - 2018
-        degree: M.S. in Subject
-        thesis_title: 'Effect of humans on other humans: a study of human behavior.'
-        thesis_url: '#'
+      - college: College of Social Sciences, University of Glasgow
+        dates: 2015 - 2019
+        degree: Ph.D. in Urban Studies
+        thesis_title: 'Multimorbidity and social care: exploiting emerging adminsitrative datasets in Scotland'
+        thesis_url: 'http://theses.gla.ac.uk/76786/'
+      - college: University of Stirling
+        dates: 2013 - 2015
+        degree: MRes in Health Research
       - college: University of State-City
         dates: 2004 - 2009
         degree: B.S. in Subject
