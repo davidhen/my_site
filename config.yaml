@@ -106,13 +106,13 @@ params:
       - journal
     icon: fas fa-book
     list:
-      - authors: MacRae C, Henderson D (joint first-author), Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
+      - authors: MacRae C, *Henderson D* (joint first-author), Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
         date: 'In Print'
         journal: British Journal of General Practice Open
         title: Excessive polypharmacy and potentially inappropriate prescribing in 147 care homes- cross sectional study
         type: First/last and/or corresponding author
         url: '#'
-      - authors: Henderson D, Atherton I, McCowan C, Mercer SW, Bailey N.
+      - authors: <b>Henderson D</b>, Atherton I, McCowan C, Mercer SW, Bailey N.
         date: '2021'
         journal: Age & Ageing 50(1)
         title: Linkage of national health & social care data- a cross-sectional study of multimorbidity and social care use in people aged over 65 years in Scotland
@@ -120,7 +120,7 @@ params:
         url: 'https://doi.org/10.1093/ageing/afaa134'
       - authors: MacRae C, Mercer SW, Guthrie, B, Henderson D.
         date: '2021'
-        journal: British Journla of General Practice 71(704)
+        journal: British Journal of General Practice 71(704)
         title: Comorbidity in chronic kidney disease- a large cross-sectional study of prevalence in Scottish primary care
         type: First/last and/or corresponding author
         url: 'https://doi.org/10.3399/bjgp20X714125'
@@ -129,12 +129,15 @@ params:
         title: Data Resource Profile- The Scottish Social Care Survey (SCS) and the Scottish Care Home Census (SCHC)
         journal: International Journal of Population Data Science 4(1)
         url: 'https://doi.org/10.23889/ijpds.v4i1.1108'
-      - authors: Mercer, SW, Henderson D, Huang H, Stewart E, Guthrie B, Wang H.
+        type: First/last and/or corresponding author
+      - authors: Mercer SW, Henderson D, Huang H, Stewart E, Guthrie B, Wang H.
         date: '2021'
         journal: British Journal of General Practice
         title: Integration of health and social care - necessary but challenging for all
         type: Other academic publications
         url: '#'
+      - authors: Huang H, Donaghy E, Henderson D, Wang H, Mercer SW.
+        date: 'submitted'
     title: Publications
     types:
       - First/last and/or corresponding author
