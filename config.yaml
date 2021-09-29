@@ -160,30 +160,13 @@ params:
         title: Deaths in Scottish care homes and COVID-19
         type: Other academic publications
         url: 'https://ltccovid.org/wp-content/uploads/2020/12/Deaths-in-Scottish-care-homes-up-to-3rd-June-corrected-1.pdf'
-    title: Publications
+    title: Academic outputs
     types:
       - First/last and/or corresponding author
       - Other academic publications
       - Conference Proceedings
-  grants:
-    format:
-      - date
-      - authors
-      - title
-      - funder
-    icon: fas fa-book
-    list:
-      - authors: Tweed E, Craig P, Mayor C, Henderson D, Brown D, Alik M, Pell J, Watson N, Meier P
-        date: 2021
-        title: Unlocking data to inform public health policy and practice- decision-maker perspectives on the use of cross-sectoral data as part of a whole-systems approach
-        funder: National Institute for Health Research ref- NIHR133585
-        type: Co-investigator
-        url: 'https://dev.fundingawards.nihr.ac.uk/award/NIHR133585'
-    title: Grants and Supervision
-    types:
-      - Co-investigator
-      - PhD funding
-      - Supervision
+      - Grants
+      - PhD supervision
   showInAccordion:
     - expand: yes
       item: aboutme
@@ -191,7 +174,7 @@ params:
     - item: education
     - item: publication
     - item: project
-    - item: grants
+    - item: skill
     - item: hobby
   skill:
     icon: fas fa-cogs
