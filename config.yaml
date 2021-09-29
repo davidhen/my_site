@@ -3,13 +3,12 @@ languageCode: en-us
 theme: aafu
 params:
   aboutme:
-    description: This is a demo of the `aafu` theme. It has `light`, `dark`, `ocean`,
-      and `pinkish` themes.
+    description: I am a research fellow based at the Usher Institute and the University of Edinburgh. I use R to wrangle and analyse large administrative datasets to help inform policy and practice in health and social care. My background is in clinical nursing having worked in Acute Medical Admissions and Medical High Dependency at Raigmore Hospital in Inverness. I also worked part-time at NHS24 as a Nurse Practitioner during my PhD studies.
     icon: fas fa-user
     title: About Me
-  author: Darshan Baral
+  author: David Henderson, PhD
   copyright: short copyright message
-  description: Website title
+  description: Dr David Henderson
   education:
     icon: fas fa-graduation-cap
     list:
