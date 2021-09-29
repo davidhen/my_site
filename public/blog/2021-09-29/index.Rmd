@@ -1,0 +1,98 @@
+---
+title: "OECD LTC plot"
+author: "David Henderson"
+date: 2021-09-29T21:21:25-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+output: 
+  html_document:
+    code_folding: hide
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    highlght: haddock
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      echo = TRUE)
+```
+
+# Intro
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(countrycode)
+library(OECD)
+
+theme_set(theme_minimal(base_size = 16))
+```
+
+## Data
+
+Use `OECD` package to get data
+
+```{r}
+dataset <- "HEALTH_LTCR"
+
+dstruc <- get_data_structure(dataset)
+
+str(dstruc)
+```
+
+```{r}
+dstruc$UNIT
+```
+```{r}
+dstruc$VAR
+```
+
+
+```{r}
+ltc <- get_dataset("HEALTH_LTCR")
+```
+
+# Plot 1
+
+```{r fig.width=12, fig.height=9}
+ltc %>%
+  mutate(obsTime = str_c(obsTime, "0101") %>% ymd(.)) %>% 
+  filter(obsTime == ymd(20190101)) %>% 
+  filter(UNIT == "PRTT65QT" & VAR %in% c("LTCILTIT", "LTCILTHT"))  %>% 
+  mutate(VAR = factor(VAR, levels = c("LTCILTIT", "LTCILTHT"),
+                      labels = c("Institution\n(Non-hospital)", "Home")),
+         COU = countrycode(COU, origin = "iso3c", destination = "country.name")) %>% 
+  group_by(COU) %>% 
+  mutate(totVal = sum(obsValue)) %>% 
+  ungroup %>% 
+  ggplot(aes(reorder(COU, -totVal), obsValue, fill = VAR)) +
+  geom_col() +
+  #geom_hline(yintercept = 7.6) +
+  scale_y_continuous(limits = c(0, 40),
+                     labels = scales::percent_format(scale = 1),
+                     expand = c(0,0.1)) +
+  scale_fill_ptol() +
+  theme(legend.position = "top",
+        plot.caption = element_text(size = 10), 
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.ticks.x = element_line(),
+        axis.text.x = element_text(angle = 25, hjust = 1, vjust = 1)) +
+  labs(y = "",
+       x = "",
+       fill = "",
+       title = "Percentage of people aged 65+ in receipt of long-term care, 2019",
+       subtitle = "OECD countries for which data is available",
+       caption = "Source:https://stats.oecd.org/") -> ltc_plot
+ltc_plot
+```
+
+```{r}
+ggsave("ltc_plot.png", ltc_plot, height =9, width = 12)
+```
+
+

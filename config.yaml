@@ -106,7 +106,7 @@ params:
       - journal
     icon: fas fa-book
     list:
-      - authors: MacRae C, Henderson D (joint first-author), Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
+      - authors: MacRae C, Henderson D, Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
         date: 'In Print'
         journal: British Journal of General Practice Open
         title: Excessive polypharmacy and potentially inappropriate prescribing in 147 care homes- cross sectional study

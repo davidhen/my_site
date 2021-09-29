@@ -1,0 +1,161 @@
+---
+title: "OECD LTC plot"
+author: "David Henderson"
+date: 2021-09-29T21:21:25-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+output: 
+  html_document:
+    code_folding: hide
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    highlght: haddock
+    df_print: paged
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="intro" class="section level1">
+<h1>Intro</h1>
+<div id="packages" class="section level2">
+<h2>Packages</h2>
+<pre class="r"><code>library(tidyverse)
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.3     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   2.0.1     ✓ forcats 0.5.1
+## Warning: package &#39;ggplot2&#39; was built under R version 4.1.1
+## Warning: package &#39;readr&#39; was built under R version 4.1.1
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+library(lubridate)
+## 
+## Attaching package: &#39;lubridate&#39;
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union
+library(ggthemes)
+library(countrycode)
+library(OECD)
+## Warning: package &#39;OECD&#39; was built under R version 4.1.1
+
+theme_set(theme_minimal(base_size = 16))</code></pre>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>Use <code>OECD</code> package to get data</p>
+<pre class="r"><code>dataset &lt;- &quot;HEALTH_LTCR&quot;
+
+dstruc &lt;- get_data_structure(dataset)
+
+str(dstruc)
+## List of 7
+##  $ VAR_DESC   :&#39;data.frame&#39;: 7 obs. of  2 variables:
+##   ..$ id         : chr [1:7] &quot;VAR&quot; &quot;UNIT&quot; &quot;COU&quot; &quot;YEA&quot; ...
+##   ..$ description: chr [1:7] &quot;Variable&quot; &quot;Measure&quot; &quot;Country&quot; &quot;Year&quot; ...
+##  $ VAR        :&#39;data.frame&#39;: 13 obs. of  2 variables:
+##   ..$ id   : chr [1:13] &quot;LTCW&quot; &quot;LTWF&quot; &quot;LTWFFWHC&quot; &quot;LTWFFWHO&quot; ...
+##   ..$ label: chr [1:13] &quot;Long-term care workers&quot; &quot;Long-term care workers: formal sector&quot; &quot;Formal LTC workers (Head counts)&quot; &quot;Formal LTC workers at home (Head counts)&quot; ...
+##  $ UNIT       :&#39;data.frame&#39;: 29 obs. of  2 variables:
+##   ..$ id   : chr [1:29] &quot;NURPCAMT&quot; &quot;IWP65N&quot; &quot;PCFORFPF&quot; &quot;TOTNURNB&quot; ...
+##   ..$ label: chr [1:29] &quot;Total (nurses and personal carers)&quot; &quot;Per 100 population aged 65 years old and over&quot; &quot;Females per 100 population aged 65 years old and over&quot; &quot;Total nurses (at home and in institutions)&quot; ...
+##  $ COU        :&#39;data.frame&#39;: 45 obs. of  2 variables:
+##   ..$ id   : chr [1:45] &quot;AUS&quot; &quot;AUT&quot; &quot;BEL&quot; &quot;CAN&quot; ...
+##   ..$ label: chr [1:45] &quot;Australia&quot; &quot;Austria&quot; &quot;Belgium&quot; &quot;Canada&quot; ...
+##  $ YEA        :&#39;data.frame&#39;: 61 obs. of  2 variables:
+##   ..$ id   : chr [1:61] &quot;1960&quot; &quot;1961&quot; &quot;1962&quot; &quot;1963&quot; ...
+##   ..$ label: chr [1:61] &quot;1960&quot; &quot;1961&quot; &quot;1962&quot; &quot;1963&quot; ...
+##  $ OBS_STATUS :&#39;data.frame&#39;: 19 obs. of  2 variables:
+##   ..$ id   : chr [1:19] &quot;b&quot; &quot;d&quot; &quot;e&quot; &quot;B&quot; ...
+##   ..$ label: chr [1:19] &quot;Break in series&quot; &quot;Deviation from OECD definition&quot; &quot;Estimate&quot; &quot;Break&quot; ...
+##  $ TIME_FORMAT:&#39;data.frame&#39;: 5 obs. of  2 variables:
+##   ..$ id   : chr [1:5] &quot;P1Y&quot; &quot;P1M&quot; &quot;P3M&quot; &quot;P6M&quot; ...
+##   ..$ label: chr [1:5] &quot;Annual&quot; &quot;Monthly&quot; &quot;Quarterly&quot; &quot;Half-yearly&quot; ...</code></pre>
+<pre class="r"><code>dstruc$UNIT
+##          id                                                         label
+## 1  NURPCAMT                            Total (nurses and personal carers)
+## 2    IWP65N                 Per 100 population aged 65 years old and over
+## 3  PCFORFPF         Females per 100 population aged 65 years old and over
+## 4  TOTNURNB                    Total nurses (at home and in institutions)
+## 5  TOTPCAMB           Total personal carers (at home and in institutions)
+## 6  NURSESQT                                             Nurses by setting
+## 7  PSOCARMB                                    Personal carers by setting
+## 8  IWP65QQT          Nurses per 100 population aged 65 years old and over
+## 9    IWP65P Personal carers per 100 population aged 65 years old and over
+## 10 NOMBRENB                                                        Number
+## 11 LTCOVRNB               Per 1 000 population aged 65 years old and over
+## 12 FEM017YF                                  Females, aged 0-17 years old
+## 13 FEM65PPF                           Females, aged 65 years old and over
+## 14 PRFM65PF     Females, % of total recipients aged 65 years old and over
+## 15 FEM80PPH                           Females, aged 80 years old and over
+## 16 PRFM80PH     Females, % of total recipients aged 80 years old and over
+## 17 MEN017YM                                    Males, aged 0-17 years old
+## 18 MEN65PMT                             Males, aged 65 years old and over
+## 19 PRHO65MT       Males, % of total recipients aged 65 years old and over
+## 20 MEN80PDU                             Males, aged 80 years old and over
+## 21 PRHO80DU       Males, % of total recipients aged 80 years old and over
+## 22 TOTAGENB                                               Total, all ages
+## 23 PRTTTTNB                               % of total population, all ages
+## 24 TOT017YT                                    Total, aged 0-17 years old
+## 25 TOT064EF                                    Total, aged 0-64 years old
+## 26 TOT65PQT                             Total, aged 65 years old and over
+## 27 PRTT65QT      Total recipients over 65, % of total population aged 65+
+## 28 TOT80PEV                             Total, aged 80 years old and over
+## 29 PRTT80EV      Total recipients over 80, % of total population aged 80+</code></pre>
+<pre class="r"><code>dstruc$VAR
+##          id                                                 label
+## 1      LTCW                                Long-term care workers
+## 2      LTWF                 Long-term care workers: formal sector
+## 3  LTWFFWHC                      Formal LTC workers (Head counts)
+## 4  LTWFFWHO              Formal LTC workers at home (Head counts)
+## 5  LTWFFWIN      Formal LTC workers in institutions (Head counts)
+## 6  LTWFFWFT                              Formal LTC workers (FTE)
+## 7  LTWFFWFH                      Formal LTC workers at home (FTE)
+## 8  LTWFFWFI              Formal LTC workers in institutions (FTE)
+## 9      BLTC         Beds in residential long-term care facilities
+## 10 BLTCLTCN         Beds in residential long-term care facilities
+## 11     LTCI                             Long-term care recipients
+## 12 LTCILTIT LTC recipients in institutions (other than hospitals)
+## 13 LTCILTHT                                LTC recipients at home</code></pre>
+<pre class="r"><code>ltc &lt;- get_dataset(&quot;HEALTH_LTCR&quot;)</code></pre>
+</div>
+</div>
+<div id="plot-1" class="section level1">
+<h1>Plot 1</h1>
+<pre class="r"><code>ltc %&gt;%
+  mutate(obsTime = str_c(obsTime, &quot;0101&quot;) %&gt;% ymd(.)) %&gt;% 
+  filter(obsTime == ymd(20190101)) %&gt;% 
+  filter(UNIT == &quot;PRTT65QT&quot; &amp; VAR %in% c(&quot;LTCILTIT&quot;, &quot;LTCILTHT&quot;))  %&gt;% 
+  mutate(VAR = factor(VAR, levels = c(&quot;LTCILTIT&quot;, &quot;LTCILTHT&quot;),
+                      labels = c(&quot;Institution\n(Non-hospital)&quot;, &quot;Home&quot;)),
+         COU = countrycode(COU, origin = &quot;iso3c&quot;, destination = &quot;country.name&quot;)) %&gt;% 
+  group_by(COU) %&gt;% 
+  mutate(totVal = sum(obsValue)) %&gt;% 
+  ungroup %&gt;% 
+  ggplot(aes(reorder(COU, -totVal), obsValue, fill = VAR)) +
+  geom_col() +
+  #geom_hline(yintercept = 7.6) +
+  scale_y_continuous(limits = c(0, 40),
+                     labels = scales::percent_format(scale = 1),
+                     expand = c(0,0.1)) +
+  scale_fill_ptol() +
+  theme(legend.position = &quot;top&quot;,
+        plot.caption = element_text(size = 10), 
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.ticks.x = element_line(),
+        axis.text.x = element_text(angle = 25, hjust = 1, vjust = 1)) +
+  labs(y = &quot;&quot;,
+       x = &quot;&quot;,
+       fill = &quot;&quot;,
+       title = &quot;Percentage of people aged 65+ in receipt of long-term care, 2019&quot;,
+       subtitle = &quot;OECD countries for which data is available&quot;,
+       caption = &quot;Source:https://stats.oecd.org/&quot;) -&gt; ltc_plot
+ltc_plot</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="1152" /></p>
+<pre class="r"><code>ggsave(&quot;ltc_plot.png&quot;, ltc_plot, height =9, width = 12)</code></pre>
+</div>
