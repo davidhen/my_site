@@ -106,12 +106,30 @@ params:
       - journal
     icon: fas fa-book
     list:
+      - authors: Tweed, E., Cimova, K., Craig, P., Allik, M., Brown, D., Campbell, M., Henderson, D., Mayor, C., Meier, P., Watson, N.
+        date: '2022'
+        title: P71 Unlocking data to inform public health policy and practice. Decision-maker perspectives on the use of cross-sectional data as part of a whole-systems approach
+        journal: Journal of Epidemiology & Community Health 
+        type: Conference Proceedings
+        url: 'http://dx.doi.org/10.1136/jech-2022-SSMabstracts.163'
+      - authors: Johnston, L., Shenkin, S., Hockley, J., Henderson, D. 
+        date: '(submitted)'
+        journal: Age & Ageing
+        title: Developing a care home data platform in Scotland. A mixed methods study of data routinely collected in care homes
+        type: First/last and/or corresponding author
+        url: '#'
+      - authors: Wöllenstein, L. Cuthill, F., Henderson, D. 
+        date: '(submitted)''
+        journal: Internationl Journal of Homelessness
+        title: An evidence synthesis on the effectiveness of homelessness prevention strategies for the MEH population.
+        type: First/last and/or corresponding author
+        url: '#'
       - authors: MacRae C, Henderson D, Mercer SW, Burton J, De Souza N, Grill P, Marwick C, Guthrie B.
-        date: 'In Print'
+        date: '2021'
         journal: British Journal of General Practice Open
         title: Excessive polypharmacy and potentially inappropriate prescribing in 147 care homes- cross sectional study
         type: First/last and/or corresponding author
-        url: '#'
+        url: 'https://doi.org/10.3399/BJGPO.2021.0167'
       - authors: Henderson D, Atherton I, McCowan C, Mercer SW, Bailey N.
         date: '2021'
         journal: Age & Ageing 50(1)
@@ -125,21 +143,51 @@ params:
         type: First/last and/or corresponding author
         url: 'https://doi.org/10.3399/bjgp20X714125'
       - authors: Henderson D, Burton J, Lynch E, Clark D, Rintoul J, Bailey N.
-        date: 2019
+        date: '2019'
         title: Data Resource Profile- The Scottish Social Care Survey (SCS) and the Scottish Care Home Census (SCHC)
         journal: International Journal of Population Data Science 4(1)
         url: 'https://doi.org/10.23889/ijpds.v4i1.1108'
         type: First/last and/or corresponding author
+      - authors: MacRae, C., Mcminn, M., Henderson, D., McAllister, DA., Jefferson, E., Morales, D., Dibben, C., Lyons, J., Lyons, RA., Ho, I., Mercer, SW., Guthrie, B.
+        date: '(submitted)'
+        journal: Lancet Public Health
+        title: Understanding the multimorbidity concept. Effect of number and selection of conditions on multimorbidity prevalence in a large primary care population dataset.
+        type: Other academic publications
+        url: '#'
+      - authors: Macrae, C., Mercer, SW., Henderson, D., McMinn, M., Morales, D., Jefferson, E., Lyons, RA., Lyons, J., Dibben, C., McAllister, D., Guthrie, B.
+        date: '(submitted)'
+        title: Age, sex, and socioeconomic differences in multimorbidity measured in four ways. UK primary care cross-sectional analysis
+        journal: British Journal of General Practice
+        type: Other academic publications
+        url: '#'
+      - authors: Donaghy, E., Huang, H., Henderson, D., Wang, H., Guthrie, B., Thompson, A., Mercer, SW.
+        date: '2022'
+        title: Primary care transformation in Scotland. Qualitative evaluation of the views of national senior stakeholders and cluster quality leads.
+        journal: British Journal of General Practice
+        type: Other academic publications
+        url: 'https://doi.org/10.3399/BJGP.2022.0186'
+      - authors: Stewart, E., Donaghy, E., Guthrie, B., Henderson, D., Huang, H., Pickersgill, M., Wang, HHX., Mercer, SW. 
+        date: '2022'
+        title: Transforming primary care in Scotland. A critical analysis of policy
+        journal: British Journal of General Practice
+        type: Other academic publication
+        url: ' https://doi.org/10.3399/bjgp22X719765'
       - authors: Mercer SW, Henderson D, Huang H, Stewart E, Guthrie B, Wang H.
         date: '2021'
         journal: British Journal of General Practice
         title: Integration of health and social care - necessary but challenging for all
         type: Other academic publications
-        url: '#'
+        url: '#https://doi.org/10.3399/bjgp21X717101'
       - authors: Huang H, Donaghy E, Henderson D, Wang H, Mercer SW.
         date: 'submitted'
-        journal: Family Medicine and Community health
+        journal: Health Expectations
         title: Using self-determination theory in research and evaluation in primary care.
+        type: Other academic publications
+        url: '#'
+      - authors: Mercer, SW., Lunan, CJ., MacRae, C., Henderson, D., Fitzpatrick, B., Gillies, J., Guthrie, B., Reilly, J.
+        date: '(submitted)'
+        title: Half a century of the inverse care law. a comparison of general practitioner job satisfaction and patient satisfaction in deprived and affluent areas of Scotland at national level
+        journal: Scottish medical journal
         type: Other academic publications
         url: '#'
       - authors: Comas-Herrera A, Zalakaín J, Lemmon E, Henderson D, Litwin C, Hsu AT, Schmidt AE, Arling G, Kruse F, Fernández JL.
@@ -160,6 +208,12 @@ params:
         title: Deaths in Scottish care homes and COVID-19
         type: Other academic publications
         url: 'https://ltccovid.org/wp-content/uploads/2020/12/Deaths-in-Scottish-care-homes-up-to-3rd-June-corrected-1.pdf'
+      - authors: Lemmon, E., Rutherford, A., Hall, P., Bell, D., Henderson D., Downing, A., Clark, S.
+        date: '2022'
+        title: The use of social care services by individuals aged 50 and over diagnosed with colorectal cancer in Scotland. A linked data study
+        journal: International Journal of Population Data Science
+        type: Conference Proceedings
+        url: 'https://doi.org/10.23889/ijpds.v7i3.2017'
     title: Academic outputs
     types:
       - First/last and/or corresponding author
